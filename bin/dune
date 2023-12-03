@@ -1,4 +1,5 @@
-(executable
- (public_name myPro)
- (name main)
- (libraries myPro))
+(executables
+ (public_names day01 day02)
+ (names day01 day02)
+ ; (name main)
+ (libraries myPro fmt))

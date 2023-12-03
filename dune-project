@@ -29,6 +29,7 @@
    ocaml-lsp-server
    dune 
    (alcotest :with-test) 
+   base-unix cmdliner fmt;fmt
    )
  (tags
   (topics "to describe" your project)))

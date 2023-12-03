@@ -19,6 +19,9 @@ depends: [
   "ocaml-lsp-server"
   "dune" {>= "3.0"}
   "alcotest" {with-test}
+  "base-unix"
+  "cmdliner"
+  "fmt"
   "odoc" {with-doc}
 ]
 build: [
