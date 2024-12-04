@@ -10,17 +10,12 @@ homepage: "https://github.com/username/reponame"
 doc: "https://url/to/documentation"
 bug-reports: "https://github.com/username/reponame/issues"
 depends: [
-  "tyxml"
-  "ppx_inline_test"
   "core"
-  "base"
-  "ocaml"
+  "ocaml" {>= "5.0"}
+  "dune" {>= "3.14"}
   "ocamlformat"
   "ocaml-lsp-server"
-  "dune" {>= "3.0"}
-  "alcotest" {with-test}
-  "base-unix"
-  "cmdliner"
+  "batteries"
   "fmt"
   "odoc" {with-doc}
 ]

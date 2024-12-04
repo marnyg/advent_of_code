@@ -1,4 +1,5 @@
-(lang dune 3.0)
+(lang dune 3.14)
+(cram enable)
 
 (name myPro)
 
@@ -19,17 +20,13 @@
  (name myPro)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends 
-   tyxml
-   ppx_inline_test
-   core 
-   base
-   ocaml
+ (depends
+   core
+   (ocaml (>= 5.0)) dune
    ocamlformat
    ocaml-lsp-server
-   dune 
-   (alcotest :with-test) 
-   base-unix cmdliner fmt;fmt
+   batteries
+   fmt
    )
  (tags
   (topics "to describe" your project)))

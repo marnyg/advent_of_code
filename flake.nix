@@ -9,7 +9,8 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       myPro = (opam-nix.lib.x86_64-linux.buildDuneProject { } "myPro" ./. { ocaml-base-compiler = "*"; }).myPro;
       myShell = pkgs.mkShell {
-        buildInputs = [ myPro pkgs.nixd pkgs.rnix-lsp ];
+        buildInputs = [ myPro ];
+        # buildInputs = [pkgs.ocaml pkgs.dune_3 ];
         LSP_SERVERS = "ocamllsp, rnix, nixd";
       };
     in

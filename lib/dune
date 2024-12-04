@@ -1,6 +1,12 @@
+(include_subdirs unqualified)
+
+(cram
+ (deps %{bin:day01}))
+
+
 (library
  (preprocess
-  (pps ppx_inline_test ppx_expect))
- (libraries fmt core base)
+  (pps ppx_inline_test ppx_expect ))
+ (libraries fmt core batteries)
  (inline_tests)
- (name myPro))
+ (name advLib))

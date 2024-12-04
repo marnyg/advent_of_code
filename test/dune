@@ -1,2 +1,5 @@
+(include_subdirs unqualified)
 (test
- (name test_myPro))
+ (preprocess
+  (pps ppx_inline_test ppx_expect ))
+ (name test_day01))

@@ -1,5 +1,5 @@
-let () = print_endline "Hello, World!"
-let () = MyPro.Test_test.echo 4
+(* let () = print_endline "Hello, World!" *)
+(* let () = MyPro.Test_test.echo 4 *)
 
 (* read file  *)
 (* move fundtion to lib *)
