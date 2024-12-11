@@ -52,9 +52,4 @@ let raw = {|3   4
 
 let%test "solve subset" = solv_part1 raw |> Option.is_some
 let%test "solve subset" = solv_part1 raw |> Option.value ~default:0 = 11
-
-let%test "solve subset part2" =
-  solv_part2 raw
-  |> fun x ->
-  x |> fun x -> x = 31
-;;
+let%test "solve subset part2" = solv_part2 raw |> fun x -> x |> fun x -> x = 31

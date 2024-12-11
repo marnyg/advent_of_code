@@ -1,9 +1,9 @@
-(lang dune 3.14)
+(lang dune 3.16)
 (cram enable)
 
-(name myPro)
+(name day01)
 
-(generate_opam_files true)
+; (generate_opam_files true)
 
 (source
  (github username/reponame))
@@ -17,14 +17,12 @@
 (documentation https://url/to/documentation)
 
 (package
- (name myPro)
+ (name day01)
  (synopsis "A short synopsis")
  (description "A longer description")
  (depends
    core
-   (ocaml (>= 5.0)) dune
-   ocamlformat
-   ocaml-lsp-server
+   (ocaml (>= 5.2)) 
    batteries
    fmt
    )

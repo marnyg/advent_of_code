@@ -34,3 +34,5 @@ _deps/
 
 result
 index.html
+.devenv
+.pre-commit-config.yaml
