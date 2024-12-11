@@ -96,7 +96,7 @@
           '';
 
           languages.ocaml.enable = true;
-          languages.ocaml.packages = pkgs.ocaml-ng.ocamlPackages_4_12 // { dune_3 = self'.packages.dune_3_17; };
+          languages.ocaml.packages = pkgs.ocaml-ng.ocamlPackages_4_12 // { dune_3 = self'.packages.dune_3_17; ocaml-lsp = pkgs.ocamlPackages.ocaml-lsp; };
           difftastic.enable = true;
           git-hooks.hooks.commitizen.enable = true;
           git-hooks.hooks.nixpkgs-fmt.enable = true;
