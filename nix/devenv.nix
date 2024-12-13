@@ -33,7 +33,10 @@
         packages = [
           config.packages.default
           config.treefmt.build.wrapper
+          pkgs.ocamlPackages.core
+          pkgs.ocamlPackages.base
         ];
+        # buildInputs = [ pkgs.ocamlPackages.core ];
 
         env.GREET = "hello";
         enterShell = ''
@@ -41,9 +44,15 @@
         '';
 
         languages.ocaml.enable = true;
-        languages.ocaml.packages = pkgs.ocaml-ng.ocamlPackages_4_12 // {
+        languages.ocaml.packages = pkgs.ocaml-ng.ocamlPackages_5_2 // {
           dune_3 = self'.packages.dune_3_17;
           ocaml-lsp = pkgs.ocamlPackages.ocaml-lsp;
+          utop = pkgs.ocamlPackages.utop.overrideAttrs (oldAttrs: {
+            propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [
+              pkgs.ocamlPackages.core
+              pkgs.ocamlPackages.base
+            ];
+          });
         };
         difftastic.enable = true;
         git-hooks.hooks.commitizen.enable = true;
