@@ -49,6 +49,7 @@
           ocaml-lsp = pkgs.ocamlPackages.ocaml-lsp;
           utop = pkgs.ocamlPackages.utop.overrideAttrs (oldAttrs: {
             propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [
+              pkgs.ocamlPackages.fmt
               pkgs.ocamlPackages.core
               pkgs.ocamlPackages.base
             ];

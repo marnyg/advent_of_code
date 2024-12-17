@@ -1,0 +1,14 @@
+#use "topfind";;
+#require "core";;
+#require "base";;
+#require "fmt";;
+
+(* Add any other project dependencies you need *)
+
+(* Open commonly used modules *)
+open Core;;
+open Base;;
+
+(* If you want to load your project's modules, you can use: *)
+(* #directory "_build/default/lib";; *)
+(* #load_rec "advLib.cma";; *)

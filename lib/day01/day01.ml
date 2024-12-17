@@ -12,20 +12,26 @@ let split_line_and_strip line =
 ;;
 
 let lists_of_input raw_string =
-  raw_string |> String.split_on_chars ~on:[ '\n' ] |> List.map ~f:split_line_and_strip |> List.unzip
+  raw_string
+  |> String.split_on_chars ~on:[ '\n' ]
+  |> List.map ~f:split_line_and_strip
+  |> List.unzip
 ;;
 
 let solv_part1 raw_string =
   lists_of_input raw_string
   |> fun (a, b) ->
   (List.sort a ~compare:Int.compare, List.sort b ~compare:Int.compare)
-  |> fun (a, b) -> List.map2_exn a b ~f:(fun a b -> abs (a - b)) |> List.reduce ~f:( + )
+  |> fun (a, b) ->
+  List.map2_exn a b ~f:(fun a b -> abs (a - b)) |> List.reduce ~f:( + )
 ;;
 
 let solv_part2 raw_string =
   let list1, list2 = lists_of_input raw_string in
   let find_count_of_element el =
-    el |> fun el -> List.fold ~init:0 ~f:(fun acc e -> acc + if e = el then 1 else 0) list2
+    el
+    |> fun el ->
+    List.fold ~init:0 ~f:(fun acc e -> acc + if e = el then 1 else 0) list2
   in
   List.map list1 ~f:find_count_of_element
   |> List.zip_exn list1

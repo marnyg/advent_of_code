@@ -7,6 +7,6 @@
 (library
  (preprocess
   (pps ppx_inline_test ppx_expect ))
- (libraries fmt core batteries)
+ (libraries fmt core)
  (inline_tests)
  (name advLib))
